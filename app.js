@@ -1,4 +1,4 @@
-//ids: {amigo} {erroramigo}
+//ids: {amigo} {listaAmigos} {resultado} 
 var amigoJS = document.getElementById('amigo');
 
 var arrAmigosJS=[];
@@ -18,7 +18,7 @@ function sortearAmigo(){
         let n = Math.floor(Math.random() * arrAmigosJS.length);
         //muestro por consola a ver si funciona
         console.log(n); 
-        
+
         mostrarResultado.innerHTML=`<li>EL AMIGO SECRETO ES: '${arrAmigosJS[n]}' </li>`;
 
     }
@@ -27,7 +27,7 @@ function sortearAmigo(){
 
 //funcion para actualizar la lista de amigos y mostrarlo
 
-function mostrarlista(){
+function mostrarLista(){
     listaAmigosJS.innerHTML=""; //limpio la lista para evitar duplicados, ya que al usar esta variable el ultimo amigo almacenado volvera a mostrarse.
     for(let i=0;i<arrAmigosJS.length;i++){
         listaAmigosJS.innerHTML+=`<li>${arrAmigosJS[i]}</li>`; //agrego cada amigo como un elemento <li>, ademas voy manejando por contador
@@ -44,7 +44,7 @@ function agregarAmigo(){
         console.log('amigo agregado');
         console.log(arrAmigosJS);
         amigoJS.value="";
-        mostrarlista();
+        mostrarLista();
 
     }
 }
